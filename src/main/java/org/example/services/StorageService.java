@@ -7,6 +7,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StorageService {
     private static final String IMAGE_FOLDER = "/Users/sasharma/Documents/GalleryApp/src/main/java/images";
@@ -116,6 +117,18 @@ public class StorageService {
         } else {
             System.out.println("Image ID not found.");
         }
+    }
+
+    public static List<Image> searchImagesByName(String name) {
+        List<Image> images = FileUtil.loadImages();
+        return images.stream()
+                .filter(img -> img.getName().toLowerCase().contains(name.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    public static Image getImageById(String id) {
+        List<Image> images = FileUtil.loadImages();
+        return images.stream().filter(img -> img.getId().equals(id)).findFirst().orElse(null);
     }
 
 }

@@ -7,4 +7,4 @@
 8,Class Diagram.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Class Diagram.png,1660,1456,2025-04-01T13:36:17,2025-04-01T13:36:17.477800089
 9,Screenshot 2025-04-01 at 11.55.27 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 11.55.27 AM.png,1450,1046,2025-04-01T11:55:33,2025-04-01T11:55:33.077908566
 10,Screenshot 2025-04-01 at 11.55.39 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 11.55.39 AM.png,880,1062,2025-04-01T11:55:44,2025-04-01T11:55:44.773521800
-11,Divide And Conquer Part 1,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 11.55.01 AM.png,1028,1134,2025-04-01T11:55:06,2025-04-01T11:55:06.692265049
+11,Divide and Conquer,images/,1028,1134,2025-04-01T11:55:06,2025-04-01T11:55:06.692265049

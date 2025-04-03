@@ -5,6 +5,9 @@ import org.example.models.Metadata;
 import org.example.services.MetadataService;
 import org.example.services.StorageService;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
@@ -21,8 +24,7 @@ public class ImageController {
 //                        image.getId(), image.getName(), image.getFilePath(),
 //                        "Found");
 
-                System.out.println("ID: " + image.getId() + ", Name: " + image.getName() + ", File Path: " + image.getFilePath() +
-                        ", Metadata Name: " + metadata.getName() + ", Metadata Location: " + metadata.getLocation());
+                System.out.println("ID: " + image.getId() + ", Name: " + image.getName() + ", File Path: " + image.getFilePath());
             } else {
 //                System.out.printf("| %-3s | %-12s | %-20s | %-10s |%n",
 //                        image.getId(), image.getName(), image.getFilePath(),
@@ -43,6 +45,48 @@ public class ImageController {
         String newName = scanner.nextLine();
 
         StorageService.renameImage(id, newName);
+    }
+
+    public static void searchImages(String name) {
+        List<Image> images = StorageService.searchImagesByName(name);
+        if (images.isEmpty()) {
+            System.out.println("No images found with the name: " + name);
+            return;
+        }
+
+        System.out.println("Search Results:");
+        for (Image image : images) {
+            System.out.println("ID: " + image.getId() + ", Name: " + image.getName());
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Image ID to view (or press Enter to skip): ");
+        String id = scanner.nextLine();
+
+        if (!id.isEmpty()) {
+            viewImage(id);
+        }
+    }
+
+    public static void viewImage(String id) {
+        Image image = StorageService.getImageById(id);
+        if (image == null) {
+            System.out.println("Image not found.");
+            return;
+        }
+
+        File file = new File(image.getFilePath());
+        if (file.exists()) {
+            try {
+                Desktop.getDesktop().open(file);
+                System.out.println("Opening image...");
+            } catch (IOException e) {
+                System.out.println("Failed to open image.");
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Image file not found.");
+        }
     }
 
     public static void getMetadata(String id) {
@@ -67,9 +111,11 @@ public class ImageController {
         if (metadata != null) {
             String newInfo;
             if(choose.equals("name")){
+                System.out.print("Enter Name: ");
                 newInfo = sc.nextLine();
                 MetadataService.updateMetadata(id,newInfo, metadata.getLocation());
             }else if(choose.equals("location")){
+                System.out.print("Enter Location: ");
                 newInfo = sc.nextLine();
                 MetadataService.updateMetadata(id, metadata.getName(), newInfo);
             }else {

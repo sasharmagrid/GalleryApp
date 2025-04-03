@@ -15,7 +15,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         while (true) {
-            System.out.println("1. List Images\n2. View Image\n3. Rename Image\n4. Delete Image\n5. Create Album\n6. Get Metadata\n7. Update Metadata\n8. Exit");
+            System.out.println("1. List Images\n2. View Image\n3. Rename Image\n4. Delete Image\n5. Create Album\n6. Get Metadata\n7. Update Metadata\n8. Search & View Image\n9. Exit");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -51,6 +51,11 @@ public class Main {
                     ImageController.updateMetadata(updateId, choose);
                     break;
                 case 8:
+                    System.out.print("Enter Image Name: ");
+                    String name = scanner.nextLine();
+                    ImageController.searchImages(name);
+                    break;
+                case 9:
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
