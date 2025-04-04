@@ -82,7 +82,6 @@ public class ImageController {
                 System.out.println("Opening image...");
             } catch (IOException e) {
                 System.out.println("Failed to open image.");
-                e.printStackTrace();
             }
         } else {
             System.out.println("Image file not found.");
@@ -160,5 +159,22 @@ public class ImageController {
 
         StorageService.viewImage(id);
     }
+
+    public static void listAlbums() {
+        List<String> albums = StorageService.listAlbums();
+        System.out.println("Available Albums:");
+        for (String album : albums) {
+            System.out.println("- " + album);
+        }
+    }
+
+    public static void listImagesInAlbum(String albumName) {
+        List<Image> images = StorageService.listImagesByAlbum(albumName);
+        System.out.println("Images in Album: " + albumName);
+        for (Image img : images) {
+            System.out.println("ID: " + img.getId() + ", Name: " + img.getName());
+        }
+    }
+
 
 }

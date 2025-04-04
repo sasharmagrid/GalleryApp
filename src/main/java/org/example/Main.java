@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.controllers.ImageController;
+import org.example.services.StorageService;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
@@ -15,7 +16,8 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         while (true) {
-            System.out.println("1. List Images\n2. View Image\n3. Rename Image\n4. Delete Image\n5. Create Album\n6. Get Metadata\n7. Update Metadata\n8. Search & View Image\n9. Exit");
+            System.out.println("1. List Images\n2. View Image\n3. Rename Image\n4. Delete Image\n5. Create Album\n6. Get Metadata\n7. Update Metadata\n8. Search & View Image\n9. List Albums\n10. List Images in Album\n11. View Image in Album\n12. Exit");
+            System.out.print("Choose Option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -56,6 +58,19 @@ public class Main {
                     ImageController.searchImages(name);
                     break;
                 case 9:
+                    ImageController.listAlbums();
+                    break;
+                case 10:
+                    System.out.print("Enter Album Name: ");
+                    String album = scanner.nextLine();
+                    ImageController.listImagesInAlbum(album);
+                    break;
+                case 11:
+                    System.out.print("Enter Image ID: ");
+                    String id = scanner.nextLine();
+                    StorageService.viewImage(id);
+                    break;
+                case 12:
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");

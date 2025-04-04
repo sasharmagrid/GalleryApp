@@ -6,6 +6,7 @@ import org.example.utils.FileUtil;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -103,7 +104,7 @@ public class StorageService {
 
         if (imageToRename != null) {
             File oldFile = new File(imageToRename.getFilePath());
-            String fileExtension = oldFile.getName().substring(oldFile.getName().lastIndexOf('.')); // Preserve file extension
+            String fileExtension = oldFile.getName().substring(oldFile.getName().lastIndexOf('.'));
             File newFile = new File(oldFile.getParent(), newName + fileExtension);
 
             if (oldFile.renameTo(newFile)) {
@@ -130,5 +131,25 @@ public class StorageService {
         List<Image> images = FileUtil.loadImages();
         return images.stream().filter(img -> img.getId().equals(id)).findFirst().orElse(null);
     }
+
+    public static List<String> listAlbums() {
+        File imageRoot = new File(IMAGE_FOLDER);
+        File[] folders = imageRoot.listFiles(File::isDirectory);
+        List<String> albums = new ArrayList<>();
+        if (folders != null) {
+            for (File folder : folders) {
+                albums.add(folder.getName());
+            }
+        }
+        return albums;
+    }
+
+    public static List<Image> listImagesByAlbum(String albumName) {
+        List<Image> allImages = FileUtil.loadImages();
+        return allImages.stream()
+                .filter(img -> img.getFilePath().contains("/" + albumName + "/"))
+                .collect(Collectors.toList());
+    }
+
 
 }
