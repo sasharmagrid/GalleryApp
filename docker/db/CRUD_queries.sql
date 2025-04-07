@@ -33,20 +33,9 @@ JOIN metadata m ON i.id = m.image_id
 GROUP BY m.location
 ORDER BY image_count DESC;
 
--- 5. Top-Something Query
--- Fetch top 5 most recent images
-SELECT * FROM images ORDER BY created_at DESC LIMIT 5;
-
--- 6. Use-Case Queries in Java Application
+-- 5. Use-Case Queries in Java Application
 -- Fetch all images in a specific album
 SELECT i.id, i.name, i.file_path
 FROM images i
 JOIN album_images ai ON i.id = ai.image_id
 WHERE ai.album_id = 1;
-
--- Fetch all images tagged with a specific keyword
-SELECT i.id, i.name, i.file_path
-FROM images i
-JOIN image_tags it ON i.id = it.image_id
-JOIN tags t ON it.tag_id = t.id
-WHERE t.name = 'Landscape';

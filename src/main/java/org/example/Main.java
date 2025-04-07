@@ -18,6 +18,7 @@ public class Main {
         while (true) {
             System.out.println("1. List Images\n2. View Image\n3. Rename Image\n4. Delete Image\n5. Create Album\n6. Get Metadata\n7. Update Metadata\n8. Search & View Image\n9. List Albums\n10. List Images in Album\n11. View Image in Album\n12. Exit");
             System.out.print("Choose Option: ");
+
             int choice = scanner.nextInt();
             scanner.nextLine();
 

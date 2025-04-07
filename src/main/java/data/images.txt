@@ -1,11 +1,10 @@
-1,.DS_Store,/Users/sasharma/Documents/GalleryApp/src/main/java/images/.DS_Store
-2,new_image,/Users/sasharma/Documents/GalleryApp/src/main/java/images/new_image.png
-3,Screenshot 2025-04-01 at 10.22.55 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 10.22.55 AM.png
+2,new_image,/Users/sasharma/Documents/GalleryApp/src/main/java/images/ddddd/new_image.png
+3,Screenshot 2025-04-01 at 10.22.55 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/ddddd/Screenshot 2025-04-01 at 10.22.55 AM.png
 4,Use Case Diagram.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Diagrams/Use Case Diagram.png
 5,Screenshot 2025-04-01 at 12.58.13 PM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 12.58.13 PM.png
-6,Screenshot 2025-04-01 at 10.28.29 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 10.28.29 AM.png
-7,Screenshot 2025-04-01 at 11.55.07 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 11.55.07 AM.png
-8,Class Diagram.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Diagrams/Class Diagram.png
+6,Screenshot 2025-04-01 at 10.28.29 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/ddddd/Screenshot 2025-04-01 at 10.28.29 AM.png
+7,Screenshot 2025-04-01 at 11.55.07 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/ddddd/Screenshot 2025-04-01 at 11.55.07 AM.png
+8,Class Diagram.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/ddddd/Class Diagram.png
 9,Screenshot 2025-04-01 at 11.55.27 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 11.55.27 AM.png
 10,Screenshot 2025-04-01 at 11.55.39 AM.png,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Screenshot 2025-04-01 at 11.55.39 AM.png
 11,Divide And Conquer Part 1,/Users/sasharma/Documents/GalleryApp/src/main/java/images/Diagrams/Divide And Conquer Part 1.png

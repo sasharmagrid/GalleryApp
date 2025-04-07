@@ -1,3 +1,6 @@
+--CREATE database IF NOT EXISTS gallery_db;
+--USE gallery_db;
+
 -- Database schema for GalleryApp
 
 CREATE TABLE IF NOT EXISTS images (
