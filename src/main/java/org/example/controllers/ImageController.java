@@ -20,15 +20,9 @@ public class ImageController {
             // Fetch metadata for each image by its ID
             Metadata metadata = MetadataService.getMetadata(image.getId());
             if (metadata != null) {
-//                System.out.printf("| %-3s | %-12s | %-20s | %-10s |%n",
-//                        image.getId(), image.getName(), image.getFilePath(),
-//                        "Found");
 
                 System.out.println("ID: " + image.getId() + ", Name: " + image.getName() + ", File Path: " + image.getFilePath());
             } else {
-//                System.out.printf("| %-3s | %-12s | %-20s | %-10s |%n",
-//                        image.getId(), image.getName(), image.getFilePath(),
-//                        "Not Found");
 
                 System.out.println("ID: " + image.getId() + ", Name: " + image.getName() + ", File Path: " + image.getFilePath() +
                         ", Metadata not found.");

@@ -6,7 +6,7 @@
 CREATE TABLE IF NOT EXISTS images (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    file_path TEXT NOT NULL
+    path VARCHAR(1024)
 );
 
 CREATE TABLE IF NOT EXISTS metadata (
