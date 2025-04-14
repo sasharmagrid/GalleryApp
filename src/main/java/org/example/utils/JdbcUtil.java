@@ -41,7 +41,7 @@ public class JdbcUtil {
         }
     }
 
-    private static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
@@ -98,4 +98,24 @@ public class JdbcUtil {
             stmt.setObject(i + 1, args[i]);
         }
     }
+
+    public static void explain(String query, Object... args) {
+        long start = System.currentTimeMillis();
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement("EXPLAIN ANALYZE " + query)) {
+            for (int i = 0; i < args.length; i++) {
+                stmt.setObject(i + 1, args[i]);
+            }
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    System.out.println(rs.getString(1));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Execution Time: " + (System.currentTimeMillis() - start) + "ms");
+    }
+
+
 }

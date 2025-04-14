@@ -9,6 +9,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//Test Queries
+//EXPLAIN ANALYZE SELECT * FROM images WHERE name = 'image_999999';
+//EXPLAIN ANALYZE SELECT * FROM images WHERE name = 'image_500' AND path = '/images/image_500.jpg';
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class JdbcUtilTest {
 
